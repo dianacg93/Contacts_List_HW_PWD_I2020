@@ -5,10 +5,10 @@ const Contact = (props) => {
 
     return (
         <div id={props.idx}>
+            <img src={contact.picture.thumbnail}/>
             <h3>{contact.name.title} {contact.name.first} {contact.name.last}</h3>
-            <p>Gender: {contact.gender}</p>
-            <p></p>
-            <p></p>
+            <p>Home: {contact.phone}</p>
+            <p>Mobile: {contact.cell}</p>
         </div>
     )
 }
