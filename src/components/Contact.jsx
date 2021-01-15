@@ -1,14 +1,17 @@
-const Contact = (props) => {
-    console.log("props: ", props)
-    const {contact} = props;
-    // console.log("Contact", contact)
+import '../App.css'
+
+const Contact = ({contact, idx}) => {
 
     return (
-        <div id={props.idx}>
-            <img src={contact.picture.thumbnail}/>
-            <h3>{contact.name.title} {contact.name.first} {contact.name.last}</h3>
-            <p>Home: {contact.phone}</p>
-            <p>Mobile: {contact.cell}</p>
+        <div key={idx.toString()} className="contact-card">
+            <div className="contact-image-container">
+                <img src={contact.picture.large} alt="contact_image" className="contact-image" />
+            </div>
+            <div className="contact-details-container">
+                <h3 className="contact-name">{contact.name.title} {contact.name.first} {contact.name.last}</h3>
+                <p className="contact-phone">Home: {contact.phone}</p>
+                <p className="contact-cell">Mobile: {contact.cell}</p>
+            </div>
         </div>
     )
 }
